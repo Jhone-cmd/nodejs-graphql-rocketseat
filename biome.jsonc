@@ -12,6 +12,9 @@
     "rules": {
       "suspicious": {
         "noConsole": "off"
+      },
+      "style": {
+        "noMagicNumbers": "off"
       }
     }
   }
