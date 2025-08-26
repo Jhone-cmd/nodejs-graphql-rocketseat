@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx --watch src/server.ts"
+    "dev": "tsx --watch src/server.ts",
+    "typeorm:generate": "typeorm-ts-node-esm migration:generate",
+    "typeorm:run": "typeorm-ts-node-esm migration:run"
   },
   "keywords": [],
   "author": "",
@@ -22,11 +24,13 @@
   "dependencies": {
     "@apollo/server": "5.0.0",
     "bcryptjs": "3.0.2",
+    "class-validator": "0.14.2",
     "express": "5.1.0",
     "graphql": "16.11.0",
     "graphql-scalars": "1.24.2",
     "pg": "8.16.3",
     "reflect-metadata": "0.2.2",
+    "ts-node": "10.9.2",
     "type-graphql": "2.0.0-rc.2",
     "typeorm": "0.3.26",
     "zod": "4.0.17"

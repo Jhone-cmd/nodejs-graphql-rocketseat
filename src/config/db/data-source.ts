@@ -10,5 +10,7 @@ export const AppDataSource = new DataSource({
   database: 'graphql',
   synchronize: true,
   logging: true,
-  entities: [],
+  entities: ['src/entities/**/*.ts'],
+  migrations: ['src/migration/**/*.ts'],
+  subscribers: ['src/subscriber/**/*.ts'],
 })
