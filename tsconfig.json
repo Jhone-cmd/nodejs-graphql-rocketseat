@@ -4,11 +4,13 @@
 
   "compilerOptions": {
     "lib": [
-      "es2024",
+      "ES2024",
       "ESNext.Array",
       "ESNext.Collection",
       "ESNext.Iterator",
-      "ESNext.AsyncIterable"
+      "ESNext.AsyncIterable",
+      "ES2018",
+      "ES2018.AsyncIterable"
     ],
     "module": "NodeNext",
     "target": "es2022",
