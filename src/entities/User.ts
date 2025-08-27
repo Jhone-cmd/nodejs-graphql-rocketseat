@@ -17,11 +17,11 @@ export class User extends BaseEntity {
 
   @Column()
   @Field()
-  first_name: string
+  firstname: string
 
   @Column()
   @Field()
-  last_name: string
+  lastname: string
 
   @Column({ unique: true })
   @Field()

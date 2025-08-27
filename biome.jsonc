@@ -4,7 +4,11 @@
 
   "javascript": {
     "formatter": {
+      "enabled": true,
       "semicolons": "asNeeded"
+    },
+    "parser": {
+      "unsafeParameterDecoratorsEnabled": true
     }
   },
 
@@ -17,7 +21,8 @@
         "noMagicNumbers": "off"
       },
       "correctness": {
-        "noUnusedPrivateClassMembers": "off"
+        "noUnusedPrivateClassMembers": "off",
+        "noUnusedFunctionParameters": "off"
       }
     }
   }
