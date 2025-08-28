@@ -59,7 +59,10 @@ A API permite criar e consultar usuários e pets, relacionando-os entre si. Util
    pnpm dev
    ```
 
-A API estará disponível em `http://localhost:3333/graphql`.
+---
+## Acessando a API
+
+ - A API estará disponível em `http://localhost:3333/graphql`.
 
 ---
 
@@ -70,20 +73,9 @@ A API estará disponível em `http://localhost:3333/graphql`.
 - **Obter todos os usuários**:
   ```graphql
   query {
-    users {
+    getUsers {
       id
-      name
-      email
-    }
-  }
-  ```
-
-- **Obter um usuário pelo ID**:
-  ```graphql
-  query {
-    user(id: "1") {
-      id
-      name
+      firstname
       email
     }
   }
@@ -92,21 +84,10 @@ A API estará disponível em `http://localhost:3333/graphql`.
 - **Obter todos os pets**:
   ```graphql
   query {
-    pets {
+    getPets {
       id
       name
-      type
-    }
-  }
-  ```
-
-- **Obter um pet pelo ID**:
-  ```graphql
-  query {
-    pet(id: "1") {
-      id
-      name
-      type
+      userId
     }
   }
   ```
@@ -117,37 +98,13 @@ A API estará disponível em `http://localhost:3333/graphql`.
   ```graphql
   mutation {
     createUser(data: {
-      name: "João",
+      firstname: "João",
+      lastname: "Silva",
       email: "joao@example.com",
       password: "senha123"
     }) {
       id
-      name
-      email
-    }
-  }
-  ```
-
-- **Atualizar um usuário existente**:
-  ```graphql
-  mutation {
-    updateUser(id: "1", data: {
-      name: "João Silva",
-      email: "joaosilva@example.com"
-    }) {
-      id
-      name
-      email
-    }
-  }
-  ```
-
-- **Excluir um usuário**:
-  ```graphql
-  mutation {
-    deleteUser(id: "1") {
-      id
-      name
+      firstname
       email
     }
   }
@@ -158,41 +115,14 @@ A API estará disponível em `http://localhost:3333/graphql`.
   mutation {
     createPet(data: {
       name: "Rex",
-      type: "dog",
-      ownerId: "1"
+      userId: "1"
     }) {
       id
       name
-      type
+      userId
     }
   }
   ```
-
-- **Atualizar um pet existente**:
-  ```graphql
-  mutation {
-    updatePet(id: "1", data: {
-      name: "Rex II",
-      type: "dog"
-    }) {
-      id
-      name
-      type
-    }
-  }
-  ```
-
-- **Excluir um pet**:
-  ```graphql
-  mutation {
-    deletePet(id: "1") {
-      id
-      name
-      type
-    }
-  }
-  ```
-
 ---
 
 ## Considerações Finais
