@@ -7,6 +7,7 @@ import {
   Entity,
   PrimaryGeneratedColumn,
 } from 'typeorm'
+import { Pet } from './Pet'
 
 @Entity('users')
 @ObjectType()
@@ -32,6 +33,9 @@ export class User extends BaseEntity {
   @Column()
   @Field()
   password_hash: string
+
+  @Field(() => [Pet])
+  pets: Pet[]
 
   @BeforeInsert()
   private async hashPassword() {
