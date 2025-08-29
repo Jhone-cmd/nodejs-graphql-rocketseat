@@ -16,22 +16,22 @@ export class User extends BaseEntity {
   @Field(() => ID)
   id: string
 
-  @Column()
-  @Field()
+  @Column({ type: 'varchar' })
+  @Field(() => String)
   firstname: string
 
-  @Column()
-  @Field()
+  @Column({ type: 'varchar' })
+  @Field(() => String)
   lastname: string
 
-  @Column({ unique: true })
-  @Field()
+  @Column({ type: 'varchar', unique: true })
+  @Field(() => String)
   email: string
 
   password: string
 
-  @Column()
-  @Field()
+  @Column({ type: 'varchar' })
+  @Field(() => String)
   password_hash: string
 
   @Field(() => [Pet])

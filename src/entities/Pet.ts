@@ -15,15 +15,15 @@ export class Pet extends BaseEntity {
   @Field(() => ID)
   id: string
 
-  @Column()
-  @Field()
+  @Column({ type: 'varchar' })
+  @Field(() => String)
   name: string
 
   @ManyToOne(() => User, { nullable: true })
   @Field(() => User)
   user?: User
 
-  @Column()
-  @Field()
+  @Column({ type: 'varchar' })
+  @Field(() => String)
   userId: string
 }

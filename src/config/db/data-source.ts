@@ -1,4 +1,6 @@
 import { DataSource } from 'typeorm'
+import { Pet } from '../../entities/Pet'
+import { User } from '../../entities/User'
 import { env } from '../../env/schema'
 
 export const AppDataSource = new DataSource({
@@ -10,5 +12,5 @@ export const AppDataSource = new DataSource({
   database: env.DB_DATABASE,
   synchronize: true,
   logging: true,
-  entities: ['src/entities/**/*.ts'],
+  entities: [User, Pet],
 })

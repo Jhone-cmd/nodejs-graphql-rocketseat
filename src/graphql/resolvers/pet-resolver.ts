@@ -10,8 +10,8 @@ export class PetResolver {
 
   @Mutation(() => Pet)
   async createPet(
-    @Arg('name') name: string,
-    @Arg('userId') userId: string
+    @Arg('name', () => String) name: string,
+    @Arg('userId', () => String) userId: string
   ): Promise<Pet> {
     const pet = Object.assign(new Pet(), {
       name,

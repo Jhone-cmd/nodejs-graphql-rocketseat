@@ -20,10 +20,10 @@ export class UserResolver {
 
   @Mutation(() => User)
   async createUser(
-    @Arg('firstname') firstname: string,
-    @Arg('lastname') lastname: string,
-    @Arg('email') email: string,
-    @Arg('password') password: string
+    @Arg('firstname', () => String) firstname: string,
+    @Arg('lastname', () => String) lastname: string,
+    @Arg('email', () => String) email: string,
+    @Arg('password', () => String) password: string
   ): Promise<User> {
     const user = Object.assign(new User(), {
       firstname,
