@@ -14,3 +14,12 @@ export const AppDataSource = new DataSource({
   logging: true,
   entities: [User, Pet],
 })
+
+export const AppDataSourceProduction = new DataSource({
+  type: 'postgres',
+  url: env.URL,
+  ssl: true,
+  synchronize: false,
+  logging: ['query', 'error'],
+  entities: [User, Pet],
+})
