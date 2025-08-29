@@ -10,3 +10,7 @@ data
 # Environment
 
 .env
+
+# Build
+
+dist
